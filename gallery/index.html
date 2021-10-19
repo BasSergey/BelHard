@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <section id="picturesHere">
+        <!-- <div>
+            <img src="./im/red.jpg" style="width: 300px;">
+            <p>Минск</p>
+        </div>
+        <div>
+            <img src="./im/red.jpg" style="width: 300px;">
+            <p>Минск</p>
+        </div>
+        <div>
+            <img src="./im/red.jpg" style="width: 300px;">
+            <p>Минск</p>
+        </div> -->
+    </section>
+    <section id="bigPictures">
+        <!-- <img src="./im/red.jpg" style="width: 1000px;">
+        <p>   Построенный в начале XVI в. магнатом Ю. И. Ильиничем замок стал первым частнособственническим замком на землях
+            Белоруссии</p> -->
+    </section>
+
+
+</body>
+
+<script>
+    let gallery = [
+
+        {
+            file: "red.jpg",
+            w: "300",
+            title: "Красный костел",
+            link: "https://msj.by/katolicheskie-xramy/krasnyj-kostel-v-minske/",
+            desciption: "В храме святого Симеона и святой Елены находится полномасштабная копия Туринской Плащаницы."
+
+        },
+        {
+            file: "troi.jpg",
+            w: "300",
+            title: "Троицкое предместье",
+            link: "https://www.belarus.by/ru/travel/belarus-life/trinity-suburb",
+            desciption: "Троицкое предместье — исторический район города Минска, расположенный в северо-восточной части исторического центра на левом берегу реки Свислочь."
+        },
+        {
+            file: "mir.jpg",
+            w: "300",
+            title: "Мирский замок",
+            link: "https://mirzamak.by/",
+            desciption: "Построенный в начале XVI в. магнатом Ю. И. Ильиничем замок стал первым частнособственническим замком на землях Белоруссии"
+
+        }
+
+
+    ];
+    let s = "";
+    for (let i = 0; i < gallery.length; i++) {
+        s += `
+            <div>
+                 <img onclick="showPic('${gallery[i].file}','${gallery[i].desciption}' )" src="./im/${gallery[i].file}" style="width:${gallery[i].w}px;">
+                 <p>${gallery[i].title}</p>
+            </div>
+        `
+
+    }
+
+
+
+    picturesHere.innerHTML = s;
+
+    function showPic(f, d) {
+        bigPictures.innerHTML = `
+         <img src="./im/${f}" style="width: 1000px;">
+        <p>${d}</p> 
+        `;
+    }
+    picturesHere.innerHTML = s;
+
+</script>
+
+</html>

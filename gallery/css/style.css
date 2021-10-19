@@ -1,0 +1,9 @@
+body{
+    width: 1000px;
+    border: 1px solid brown;
+    margin:50px auto
+}
+#picturesHere{
+    display: flex;
+    justify-content: space-between;   
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body onload="timer()">
+
+    <section onmouseover="stop()" onmouseout=" timerID = setTimeout(timer, 2000);">
+        <a href="https://www.google.com/maps" id="lnk">
+            <img src="./images/img1b.jpg" alt="" id="img">
+
+
+        </a>
+        <div id="previous" onclick="previous()">
+            <span class="material-icons"> navigate_before </span>
+        </div>
+
+        <div id="next" onclick="next()">
+            <span class="material-icons"> navigate_next </span>
+        </div>
+
+        <article>
+            <h1 id="t1">Заголовок слайда 1</h1>
+            <p id="t2"><a href="link1.html">ПОдзаголовок слайда 1</a></p>
+           <h2 id="t3"><a href="https://www.youtube.com/">www.youtube.com</a></h2>
+
+        </article>
+
+    </section>
+
+    <script>
+
+        let n = 1;
+        let p = 6;
+
+        links = ["https://www.youtube.com/", "https://www.w3schools.com/sql/default.asp", "https://www.google.com/maps", "https://www.instagram.com/?hl=ru", "https://www.facebook.com", "https://www.ikea.com/ru/ru/"]
+        links1 = [];
+        let pos_start, pos_end = 0, url="" ;
+
+        for (let i = 0; i < links.length; i++) {
+
+         links1[i]=cutOff(links[i]);
+        }
+        console.log(links1);
+       
+        function cutOff(s){
+
+            pos_start = s.indexOf(':', 0);
+
+
+            pos_end = s.length;
+
+            domain = s.substring(pos_start+3, pos_end-1);
+
+            return domain;
+        }
+
+        function timer() {
+            if (n > p) n = 1;
+            changeElem();
+            n++;
+            timerID = setTimeout(timer, 2000);
+
+        }
+        function stop() {
+            clearTimeout(timerID)
+        }
+        function next() {
+            if (n == 6) n = 1; else n++;
+            changeElem();
+        }
+
+        function previous() {
+            if (n == 1) n = 6; else n--;
+            changeElem();
+        }
+
+        function changeElem(){
+            img.src = `./images/img${n}b.jpg`
+            lnk.href = links[n - 1]
+
+            t1.innerHTML = `Заголовок слайда ${n}`;
+            t2.innerHTML = `<a href="link${n}.html"> ПОдзаголовок слайда ${n} </a>`;
+            t3.innerHTML = `<a href="${links[n - 1]}">${links1[n - 1]}</a>`
+        }
+
+
+    </script>
+
+</body>
+
+</html>

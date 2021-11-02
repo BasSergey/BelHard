@@ -1,0 +1,67 @@
+section {
+  width: 550px;
+  height: 400px;
+  margin: auto;
+}
+.material-icons,
+img,
+.material-icons,
+a {
+  transition: 0.3s;
+}
+img:hover {
+  filter: brightness(70%);
+}
+
+div {
+  width: 70px;
+  position: relative;
+  color: white;
+  background: rgba(229, 231, 231, 0.521);
+  cursor: pointer;
+}
+.material-icons {
+  font-size: 70px;
+}
+.material-icons:hover,
+a:hover {
+  color: black;
+}
+
+#previous {
+  top: -250px;
+}
+
+#next {
+  top: -326px;
+  left: 480px;
+}
+
+article {
+  height: 100px;
+  background: rgba(255, 0, 43, 0.514);
+  position: relative;
+  top: -270px;
+  color: white;
+}
+h1,
+p {
+  padding-left: 15px;
+}
+h1 {
+  padding-top: 10px;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+h2 {
+  position: relative;
+  top: -370px;
+  left: 15px;
+  border:1px solid #fff;
+  width: fit-content;
+  text-align: center;
+  padding: 0 5px;
+  
+}

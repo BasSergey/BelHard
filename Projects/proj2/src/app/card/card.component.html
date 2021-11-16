@@ -1,0 +1,43 @@
+
+<section>
+    <h1>Example card</h1>
+<mat-card class="example-card" (mouseenter) = "toggleElement()" (mouseleave) = "toggleElement()" [ngClass] ="{'addshadow': showElement.myelement }">
+    <mat-card-header>
+      <div mat-card-avatar class="myheader" title="Gift certificate">
+          <mat-icon>card_giftcard</mat-icon>
+      </div>
+      <mat-card-title>Men's shoes</mat-card-title>
+      <mat-card-subtitle>Rieker Man</mat-card-subtitle>
+    </mat-card-header>
+    <a href="#" title="Men's shoes Rieker Man - genuine leather">
+    <img mat-card-image src="../../assets/images/13.jpg" alt="Men's shoes">
+    </a>
+    
+    <mat-card-content>
+
+        <div class="stars" [ngClass] ="{'addstars': showElement.myelement }">
+            <mat-icon>star</mat-icon>
+            <mat-icon>star</mat-icon>
+            <mat-icon>star</mat-icon>
+            <mat-icon>star_half</mat-icon>
+            <mat-icon>star_border</mat-icon>
+
+        </div>
+
+      <p>Upper Material: genuine leather</p>
+      <p>Limited edition</p>
+      <p><span class="price">50,0 $</span></p>
+
+      <ul>
+        <li><button mat-icon-button> <mat-icon>lens</mat-icon> </button></li>
+        <li><button mat-icon-button> <mat-icon>lens</mat-icon> </button></li>
+        <li><button mat-icon-button> <mat-icon>lens</mat-icon> </button></li>
+
+    </ul>
+
+    </mat-card-content>
+    <mat-card-actions>
+      <p title="add to cart" class="mybutton" [ngClass] ="{'addbuttons': showElement.myelement }"><a href="#">ADD TO CART</a></p>
+    </mat-card-actions>
+  </mat-card>
+</section>
